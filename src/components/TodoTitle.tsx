@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import { Heading, } from '@chakra-ui/react';
+import React, { memo } from "react";
+import { Heading } from "@chakra-ui/react";
 
 interface TodoTitleProps {
   title: string;
