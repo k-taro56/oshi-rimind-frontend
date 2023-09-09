@@ -1,4 +1,6 @@
 import { Textarea,Button } from "@chakra-ui/react"
+import React, { RefObject } from 'react';
+
 
 export const TodoAdd=({
     placeholder,
@@ -6,6 +8,12 @@ export const TodoAdd=({
     buttonText,
     inputEl,
     handleAddTodoListItem
+}:{
+  placeholder: string;
+  leftIcon: JSX.Element;
+  buttonText: string;
+  inputEl: RefObject<HTMLTextAreaElement>;
+  handleAddTodoListItem: () => void;
 })=>{
     return(
       <>

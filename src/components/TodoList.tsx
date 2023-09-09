@@ -1,8 +1,21 @@
 import { TodoItem } from "./TodoItem"
 import { TodoTitle } from "./TodoTitle"
 import {List}from"@chakra-ui/react"
+import React from 'react';
 
-export const TodoList=({todoList,toggleTodoListItemStatus,deleteTodoListItem,title,as,fontsize})=>{
+interface Todo {
+  id: string;
+  content: string;
+  done: boolean;
+}
+export const TodoList=({todoList,toggleTodoListItemStatus,deleteTodoListItem,title,as,fontsize}: {
+  todoList: Todo[]; // Todo型の配列または適切な型を指定
+  toggleTodoListItemStatus: (id: string, done: boolean) => void;
+  deleteTodoListItem: (id: string) => void;
+  title: string;
+  as?: React.ElementType;
+  fontsize?: string | Record<string, string>;
+})=>{
     return(
         <>
         {todoList.length!==0 &&(

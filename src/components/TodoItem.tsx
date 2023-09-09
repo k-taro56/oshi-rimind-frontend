@@ -1,7 +1,18 @@
 import{ListItem,Text,Flex,Button,IconButton}from"@chakra-ui/react";
-import {DeleteIcon} from "@chakra-ui/icons";
+import React,{DeleteIcon} from "@chakra-ui/icons";
 
-export const TodoItem=({todo,toggleTodoListItemStatus,deleteTodoListItem})=>{
+
+interface Todo {
+    id: string;
+    content: string;
+    done: boolean;
+  }
+
+export const TodoItem=({todo,toggleTodoListItemStatus,deleteTodoListItem}: {
+    todo: Todo; // Todo型または適切な型を指定
+    toggleTodoListItemStatus: (id: string, done: boolean) => void;
+    deleteTodoListItem: (id: string) => void;
+  })=>{
     const handleToggleTodoListItemStatus=()=>toggleTodoListItemStatus(todo.id,todo.done);
     const handleDeleteTodoListItem=()=>deleteTodoListItem(todo.id);
     const label=todo.done?"未完了リストへ":"完了リストへ";
