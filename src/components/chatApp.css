@@ -1,0 +1,114 @@
+/* App.css */
+
+/* 既存のスタイルをそのままコピー */
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  background-color: #f5f5f5;
+  width: 50%;
+  height: 85vh;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  background-color: #b6b6b6;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.message-container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #b6b6b6;
+}
+
+.username-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.message {
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.bubble {
+  padding: 10px;
+  max-width: 70%; /* 吹き出しの最大幅 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow-wrap: break-word;
+}
+
+.message.user .bubble {
+  background-color: #007BFF;
+  color: #fff; /* テキストの色 */
+}
+
+.message.bot .bubble {
+  background-color: #02ca23;
+  color: #fff; /* テキストの色 */
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* ユーザとボットのテキストスタイル */
+.userp {
+  margin: 0;
+}
+
+.botp {
+  margin: 0;
+}
+
+/* input要素とボタン要素のスタイルはそのまま */
+
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
