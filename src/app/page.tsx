@@ -172,21 +172,26 @@ export default function Home() {
       </div>
 
       <div className="p-4 bg-gray-300 dark:bg-gray-700">
-        <form onSubmit={handleSubmit} className="flex">
-          <input
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="flex-1 rounded p-2 mr-2 dark:bg-gray-800 dark:text-white"
-            placeholder="Enter your message..."
-          />
-          <button
-            type="submit"
-            className="bg-blue-500 text-white py-2 px-4 rounded"
-            disabled={isSending}
-          >
-            {isSending ? 'Sending...' : 'Send'}
+        <div className="flex">
+          <form onSubmit={handleSubmit} className="flex-1 flex">
+            <input
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="flex-1 rounded p-2 mr-2 dark:bg-gray-800 dark:text-white"
+              placeholder="Enter your message..."
+            />
+            <button
+              type="submit"
+              className="bg-blue-500 text-white py-2 px-4 rounded"
+              disabled={isSending}
+            >
+              {isSending ? 'Sending...' : 'Send'}
+            </button>
+          </form>
+          <button className="bg-blue-500 ml-2 text-white py-2 px-4 rounded">
+            Go to Task Management Page
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );
