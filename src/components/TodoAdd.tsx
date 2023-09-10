@@ -1,5 +1,5 @@
 import { Textarea, Button } from "@chakra-ui/react";
-import React, { RefObject } from "react";
+import React, { RefObject, JSX } from "react";
 
 export const TodoAdd = ({
   placeholder,
