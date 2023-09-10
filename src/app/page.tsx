@@ -113,25 +113,7 @@ export default function Home() {
   return (
     <div className="h-screen flex flex-col bg-gray-200 dark:bg-gray-800">
       <div className="p-4 bg-white dark:bg-gray-900 border-b border-gray-300 dark:border-gray-600">
-        <form onSubmit={addTask} className="flex">
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            type="text"
-            id="current-page-title"
-            className="flex-1 rounded p-2 mr-2 dark:bg-gray-800 dark:text-white"
-          />
-          <input
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            type="text"
-            id="current-page-url"
-            className="flex-1 rounded p-2 mr-2 dark:bg-gray-800 dark:text-white"
-          />
-          <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">
-            Add Reading List
-          </button>
-        </form>
+        <h1 className="text-3xl text-black text-center font-bold">OshiRemind</h1>
       </div>
 
       <div className="flex-1 overflow-y-auto p-4">
