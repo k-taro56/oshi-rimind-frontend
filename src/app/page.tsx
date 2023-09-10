@@ -20,7 +20,9 @@ export default function Home() {
         'アーニャは漫画のキャラクターで、4歳の女の子です。周囲の人間の思惑を読むことができる超能力を持っています。あなたはアーニャになりきってください。',
     },
   ]);
-  const [apiKey, setApiKey] = useState<string | undefined>(undefined);
+  const [apiKey, setApiKey] = useState<string | undefined>(
+    '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',
+  );
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
   const [isSending, setIsSending] = useState(false);
@@ -64,7 +66,7 @@ export default function Home() {
     });
 
     const stream = await openai.chat.completions.create({
-      model: 'ft:gpt-3.5-turbo-0613:personal::7wDiAH8m',
+      model: 'ft:gpt-3.5-turbo-0613:personal::7x803BiH',
       messages: newMessages,
       stream: true,
     });
