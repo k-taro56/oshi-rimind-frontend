@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "oshi-rimind-frontend/static/js/main.d9ffd9e1.js",
-    "index.html": "oshi-rimind-frontend/index.html",
-    "main.d9ffd9e1.js.map": "oshi-rimind-frontend/static/js/main.d9ffd9e1.js.map"
+    "main.js": "/oshi-rimind-frontend/static/js/main.d9ffd9e1.js",
+    "index.html": "/oshi-rimind-frontend/index.html",
+    "main.d9ffd9e1.js.map": "/oshi-rimind-frontend/static/js/main.d9ffd9e1.js.map"
   },
   "entrypoints": [
     "static/js/main.d9ffd9e1.js"
