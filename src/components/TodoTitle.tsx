@@ -8,10 +8,14 @@ interface TodoTitleProps {
   mt?: string;
 }
 
-export const TodoTitle = memo(({ title, as, fontsize, mt }: TodoTitleProps) => {
+const TodoTitleComponent = ({ title, as, fontsize, mt }: TodoTitleProps) => {
   return (
     <Heading mt={mt} as={as} fontSize={fontsize} w="full">
       {title}
     </Heading>
   );
-});
+};
+
+TodoTitleComponent.displayName = "TodoTitle";
+
+export const TodoTitle = memo(TodoTitleComponent);
