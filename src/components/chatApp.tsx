@@ -1,6 +1,6 @@
 // App.tsx
-import React, { useState } from 'react';
-import './chatApp.css';
+import React, { useState } from "react";
+import "./chatApp.css";
 
 interface Message {
   text: string;
@@ -14,19 +14,25 @@ enum AppMode {
 
 const App: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [newMessage, setNewMessage] = useState('');
-  const [userName, setUserName] = useState('');
+  const [newMessage, setNewMessage] = useState("");
+  const [userName, setUserName] = useState("");
   const [appMode, setAppMode] = useState(AppMode.EnterUserName);
 
   const handleSendMessage = () => {
-    if (newMessage.trim() !== '' && userName.trim() !== '') {
-      const updatedMessages = [...messages, { text: `${userName}: ${newMessage}`, sender: 'user' }];
+    if (newMessage.trim() !== "" && userName.trim() !== "") {
+      const updatedMessages = [
+        ...messages,
+        { text: `${userName}: ${newMessage}`, sender: "user" },
+      ];
       setMessages(updatedMessages);
-      setNewMessage('');
+      setNewMessage("");
 
       setTimeout(() => {
-        const responseMessage = 'これは仮の応答です。';
-        const updatedMessagesWithResponse = [...updatedMessages, { text: responseMessage, sender: 'bot' }];
+        const responseMessage = "これは仮の応答です。";
+        const updatedMessagesWithResponse = [
+          ...updatedMessages,
+          { text: responseMessage, sender: "bot" },
+        ];
         setMessages(updatedMessagesWithResponse);
       }, 1000);
 
@@ -35,7 +41,7 @@ const App: React.FC = () => {
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSendMessage();
     }
   };
@@ -52,13 +58,15 @@ const App: React.FC = () => {
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
             />
-            <button onClick={() => setAppMode(AppMode.Chat)}>ユーザ名設定</button>
+            <button onClick={() => setAppMode(AppMode.Chat)}>
+              ユーザ名設定
+            </button>
           </div>
         )}
         {appMode === AppMode.Chat && (
           <div className="message-container">
             {messages.map((message, index) => (
-              <Message key={index} message={message} />
+              <MessageComponent key={index} message={message} />
             ))}
           </div>
         )}
@@ -78,25 +86,26 @@ const App: React.FC = () => {
     );
   };
 
-  return (
-    <div className="App">
-      {renderContent()}
-    </div>
-  );
+  return <div className="App">{renderContent()}</div>;
 };
 
 interface MessageProps {
   message: Message;
 }
 
-const Message: React.FC<MessageProps> = ({ message }) => {
-  const iconSrc = message.sender === 'user' ? 'https://1.bp.blogspot.com/-jlZlCg-8FAM/Xub_u8HTD1I/AAAAAAABZis/ZhUI05AZBEQpVinedZ6Xy-eIucmNuY2SQCNcBGAsYHQ/s1600/pose_pien_uruuru_man.png' : 'https://1.bp.blogspot.com/-VthzAuEo8fc/X96mhYv33UI/AAAAAAABdBs/HXCc0J0WsHUMSuQ00UZ5UuLPUXatMIq-wCNcBGAsYHQ/s831/onepiece01_luffy2.png';
+const MessageComponent: React.FC<MessageProps> = ({ message }) => {
+  const iconSrc =
+    message.sender === "user"
+      ? "https://1.bp.blogspot.com/-jlZlCg-8FAM/Xub_u8HTD1I/AAAAAAABZis/ZhUI05AZBEQpVinedZ6Xy-eIucmNuY2SQCNcBGAsYHQ/s1600/pose_pien_uruuru_man.png"
+      : "https://1.bp.blogspot.com/-VthzAuEo8fc/X96mhYv33UI/AAAAAAABdBs/HXCc0J0WsHUMSuQ00UZ5UuLPUXatMIq-wCNcBGAsYHQ/s831/onepiece01_luffy2.png";
 
   return (
     <div className={`message ${message.sender}`}>
       <div className="bubble">
         <img className="icon" src={iconSrc} alt="Icon" />
-        <p className={message.sender === 'user' ? 'userp' : 'botp'}>{message.text}</p>
+        <p className={message.sender === "user" ? "userp" : "botp"}>
+          {message.text}
+        </p>
       </div>
     </div>
   );
