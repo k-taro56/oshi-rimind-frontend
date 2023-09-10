@@ -39,7 +39,7 @@ jobs:
 
       - name: Build React App
         env:
-          PUBLIC_URL: ${{ env.REPO_NAME }}
+          PUBLIC_URL: /${{ env.REPO_NAME }}
         run: npm run build
 
       - name: Deploy to GitHub Pages
