@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { OpenAI } from 'openai';
 
 type SetDataEventDetail = {
@@ -10,6 +11,7 @@ type SetDataEventDetail = {
 type SetDataEvent = CustomEvent<SetDataEventDetail>;
 
 export default function Home() {
+  const router = useRouter();
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<OpenAI.Chat.ChatCompletionMessageParam[]>([
     {
@@ -188,7 +190,10 @@ export default function Home() {
               {isSending ? 'Sending...' : 'Send'}
             </button>
           </form>
-          <button className="bg-blue-500 ml-2 text-white py-2 px-4 rounded">
+          <button
+            onClick={() => router.push('/todo-list')}
+            className="bg-blue-500 ml-2 text-white py-2 px-4 rounded"
+          >
             Go to Task Management Page
           </button>
         </div>
