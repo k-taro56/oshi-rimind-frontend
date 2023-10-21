@@ -1,0 +1,9 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[240],{9970:function(e,t,r){Promise.resolve().then(r.bind(r,1978))},1978:function(e,t,r){"use strict";r.r(t);var n=r(2987),l=r(7317);t.default=()=>{let[e,t]=(0,l.useState)([]),[r,s]=(0,l.useState)(""),handleDeleteTask=r=>{let n=[...e];n.splice(r,1),t(n)};return(0,n.jsxs)("div",{className:"w-full max-w-xl mx-auto mt-10",children:[(0,n.jsxs)("div",{className:"mb-4",children:[(0,n.jsx)("input",{type:"text",className:"w-full p-2 border rounded",placeholder:"タスクを入力...",value:r,onChange:e=>s(e.target.value)}),(0,n.jsx)("button",{className:"w-full mt-2 p-2 bg-blue-500 text-white rounded",onClick:()=>{r&&(t([...e,r]),s(""))},children:"タスクを追加"})]}),(0,n.jsx)("ul",{children:e.map((e,t)=>(0,n.jsxs)("li",{className:"mb-2 p-2 border rounded flex justify-between",children:[(0,n.jsx)("span",{children:e}),(0,n.jsx)("button",{className:"text-red-500",onClick:()=>handleDeleteTask(t),children:"削除"})]},t))})]})}},8245:function(e,t,r){"use strict";/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var n=r(7317),l=Symbol.for("react.element"),s=(Symbol.for("react.fragment"),Object.prototype.hasOwnProperty),a=n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,o={key:!0,ref:!0,__self:!0,__source:!0};function q(e,t,r){var n,u={},c=null,i=null;for(n in void 0!==r&&(c=""+r),void 0!==t.key&&(c=""+t.key),void 0!==t.ref&&(i=t.ref),t)s.call(t,n)&&!o.hasOwnProperty(n)&&(u[n]=t[n]);if(e&&e.defaultProps)for(n in t=e.defaultProps)void 0===u[n]&&(u[n]=t[n]);return{$$typeof:l,type:e,key:c,ref:i,props:u,_owner:a.current}}t.jsx=q,t.jsxs=q},2987:function(e,t,r){"use strict";e.exports=r(8245)}},function(e){e.O(0,[195,338,744],function(){return e(e.s=9970)}),_N_E=e.O()}]);
