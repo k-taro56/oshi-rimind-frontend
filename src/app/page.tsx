@@ -20,9 +20,7 @@ export default function Home() {
         'アーニャは漫画のキャラクターで、4歳の女の子です。周囲の人間の思惑を読むことができる超能力を持っています。あなたはアーニャになりきってください。',
     },
   ]);
-  const [apiKey, setApiKey] = useState<string | undefined>(
-    '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',
-  );
+  const [apiKey, setApiKey] = useState<string | undefined>();
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
   const [isSending, setIsSending] = useState(false);
